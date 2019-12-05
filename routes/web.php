@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['web']] , function () {
+Route::group(['middleware' => ['web','admin']] , function () {
   Route::resource('blog','BlogController');
+  Route::get('/mailist','MailistController@index');
+  Route::post('/mailist','MailistController@store');
 });

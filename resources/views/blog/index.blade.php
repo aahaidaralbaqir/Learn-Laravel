@@ -11,6 +11,8 @@
             <li class="list-group-item"> <a href="/blog/{{ $blog->slug }}"> {{ $blog->title }} </a> | {{ $blog->subject }} || {{ date('F d,Y', strtotime($blog->created_at)) }}</li>
           @endforeach
         </ul>
+        <br>
+        <br>
         {{ $blogs->links() }}
       </div>
     </div>

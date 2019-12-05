@@ -37,6 +37,9 @@
                         <li class="nav-item">
                           <a href="/blog" class="nav-link">Blog</a>
                         </li>
+                        <li class="nav-item">
+                          <a href="/mailist" class="nav-link">Mailist</a>
+                        </li>
                       @endif
                     </ul>
 

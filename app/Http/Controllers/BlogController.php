@@ -14,6 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        // $blogs = DB::table('blog')->
         $blogs = Blog::paginate(5);
         return view('blog.index',['blogs' => $blogs]);
     }
@@ -40,7 +41,8 @@ class BlogController extends Controller
         'title' => 'required|unique:blog',
         'subject' => 'required'
       ]);
-      $blog = new Blog;
+
+      $blog =  new Blog;
       $blog->id = rand(10,100);
       $blog->title = $request->input('title');
       $blog->slug  = str_slug($request->input('title'),'-');
@@ -109,4 +111,5 @@ class BlogController extends Controller
 
         return redirect('/blog')->with('success','Data deleted');
     }
+
 }
